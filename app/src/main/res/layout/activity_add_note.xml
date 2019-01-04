@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:nandroid="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="viewModel"
+            type="com.example.gaetan.myapplication.AddEditNoteActivity" />
+    </data>
+
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AddEditNoteActivity">
+
+
+
+
+    <EditText
+        android:text="@={viewModel.edit_text_title}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Objet de la tache "
+        android:inputType="text" />
+        <!--android:id="@+id/edit_text_title"-->
+
+
+    <EditText
+        android:text="@={viewModel.edit_text_description}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description de la tache"
+        android:inputType="textMultiLine" />
+        <!--android:id="@+id/edit_text_description"-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Importance de la tache sur 10:"
+        android:textAppearance="@android:style/TextAppearance.Medium" />
+
+    <com.example.gaetan.myapplication.MyNumberPicker
+        android:value="@={viewModel.number_picker_priority}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        max="10"
+        min="1" />
+
+</LinearLayout>
+</layout>
